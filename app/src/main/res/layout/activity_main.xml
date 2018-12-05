@@ -8,17 +8,32 @@
 
     <Button
         android:id="@+id/randomjoke"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:text="Random" />
 
     <Button
         android:id="@+id/inputjoke"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="156dp"
         android:text="Names" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:autoText="false"
+        android:singleLine="true"
+        android:text="Jokes!"
+        android:textAllCaps="false"
+        android:textSize="100sp"
+        app:fontFamily="cursive" />
 </RelativeLayout>
