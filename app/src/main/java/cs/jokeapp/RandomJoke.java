@@ -75,29 +75,32 @@ public class RandomJoke extends AppCompatActivity {
      */
     private void getJoke() {
         String URL = "https://api.icndb.com";
-        //URL obj = new URL(URL);
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-
-        JsonObjectRequest objectRequest = new JsonObjectRequest(
-                Request.Method.GET, //Request type
+        try {
+            JsonObjectRequest objectRequest = new JsonObjectRequest(
+            Request.Method.GET, //Request type
                 URL, //URL string
                 null, //put parameters here
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.i("Joke Site", "It's responding!");
+                        Log.i("Joke Site", "It's responding!" + response.toString());
                         setText("This is a good response!");
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.i("Joke Site", "It's coming up with an error...");
+                    public void onErrorResponse(final VolleyError error) {
+                        Log.i("Joke Site", "It's coming up with an error..." + error.toString());
                         setText("This is a bad response... but still a response nontheless!");
                     }
-                }
-        );
-        requestQueue.add(objectRequest);
+            });
+            requestQueue.add(objectRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.i("Joke Site", "Catch block in API getJoke()");
+            throw e;
+        }
     }
 
 
