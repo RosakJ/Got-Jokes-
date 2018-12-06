@@ -36,8 +36,7 @@ public class RandomJoke extends AppCompatActivity {
 
 
     /**
-     * This configures the home button and is pretty self explanatory on what it does,
-     * but it'll take you back to the home page.
+     * This configures the home button to take you back to the home page.
      */
     private void configureHomeButton() {
         Button homerandom = (Button) findViewById(R.id.backrandom);
@@ -63,10 +62,7 @@ public class RandomJoke extends AppCompatActivity {
             }
         });
     }
-
-    //============================= Error installing APK fix?? =====================================
-
-
+    
     /**
      * This class gets the joke, it sets up the whole object request and volley system
      * I'm not sure this is the best way to do it, I saw some people make separate

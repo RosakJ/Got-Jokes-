@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
         configureRandomButton();
     }
 
+    /**
+     * Configures the button to go to the random page.
+     */
     private void configureRandomButton() {
         Button randomButton = (Button) findViewById(R.id.randomjoke);
         randomButton.setOnClickListener(new View.OnClickListener() {
