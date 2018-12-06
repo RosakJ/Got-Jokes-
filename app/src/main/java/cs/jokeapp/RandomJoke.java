@@ -25,18 +25,15 @@ import static com.android.volley.Request.Method.GET;
 
 public class RandomJoke extends AppCompatActivity {
 
-    TextView jokeArea = (TextView) findViewById(R.id.jokeArea);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_random_joke);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         configureJokeButton();
         configureHomeButton();
     }
+
 
     /**
      * This configures the home button and is pretty self explanatory on what it does,
@@ -57,11 +54,12 @@ public class RandomJoke extends AppCompatActivity {
      * itself out.
      */
     private void configureJokeButton() {
-        Button randomJoke = (Button) findViewById(R.id.randomjoke);
+        Button randomJoke = (Button) findViewById(R.id.newrandom);
         randomJoke.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getJoke();
+                System.out.println("Where even is this?");
             }
         });
     }
@@ -100,11 +98,13 @@ public class RandomJoke extends AppCompatActivity {
         requestQueue.add(objectRequest);
     }
 
+
     /**
      * This should set the text to whatever is passed to it.
      * @param joke This is the text passed to it, preferably a joke.
      */
     private void setText(String joke) {
+        TextView jokeArea = (TextView) findViewById(R.id.jokeArea);
         jokeArea.setText(joke);
     }
 }
