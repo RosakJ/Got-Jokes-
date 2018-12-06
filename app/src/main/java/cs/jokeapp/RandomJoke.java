@@ -18,6 +18,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.net.URL;
+
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
@@ -73,6 +75,7 @@ public class RandomJoke extends AppCompatActivity {
      */
     private void getJoke() {
         String URL = "https://api.icndb.com";
+        //URL obj = new URL(URL);
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         JsonObjectRequest objectRequest = new JsonObjectRequest(
