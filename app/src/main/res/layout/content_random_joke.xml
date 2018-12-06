@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_random_joke">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/jokeArea"
         android:layout_width="344dp"
         android:layout_height="224dp"
         android:layout_alignParentTop="true"
