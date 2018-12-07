@@ -62,7 +62,7 @@ public class RandomJoke extends AppCompatActivity {
             }
         });
     }
-    
+
     /**
      * This class gets the joke, it sets up the whole object request and volley system
      * I'm not sure this is the best way to do it, I saw some people make separate
