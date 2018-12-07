@@ -36,4 +36,16 @@
         android:textAllCaps="false"
         android:textSize="100sp"
         app:fontFamily="cursive" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="196dp"
+        android:fontStyle="italic"
+        android:text="Come joke around with us by clicking a button:"
+        android:textSize="16sp" />
+
 </RelativeLayout>
