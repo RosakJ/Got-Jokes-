@@ -1,5 +1,6 @@
 package cs.jokeapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,7 +21,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import java.net.URL;
-
+import org.json.*;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
@@ -77,25 +79,37 @@ public class RandomJoke extends AppCompatActivity {
         String URL = "https://api.icndb.com";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         try {
-            JsonObjectRequest objectRequest = new JsonObjectRequest(
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
             Request.Method.GET, //Request type
-                URL, //URL string
+                "http://api.icndb.com/jokes/random", //URL string
                 null, //put parameters here
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.i("Joke Site", "It's responding!" + response.toString());
-                        setText("This is a good response!");
+                        try {
+                            setText(response.getJSONObject("id").getString("joke"));
+                        } catch (JSONException e) {
+                            Context context = getApplicationContext();
+                            CharSequence text = "An error occurred!";
+                            int duration = Toast.LENGTH_SHORT;
+                            Toast toast = Toast.makeText(context, text, duration);
+                            toast.show();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(final VolleyError error) {
                         Log.i("Joke Site", "It's coming up with an error..." + error.toString());
-                        setText("This is a bad response... but still a response nontheless!");
+                        Context context = getApplicationContext();
+                        CharSequence text = "An error occurred!";
+                        int duration = Toast.LENGTH_SHORT;
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
                     }
             });
-            requestQueue.add(objectRequest);
+            requestQueue.add(jsonObjectRequest);
         } catch (Exception e) {
             e.printStackTrace();
             Log.i("Joke Site", "Catch block in API getJoke()");
