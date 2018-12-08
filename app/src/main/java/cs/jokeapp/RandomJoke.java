@@ -135,8 +135,9 @@ public class RandomJoke extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         Log.i("Joke Site", "It's responding!" + response.toString());
                         try {
-                            setText(response.getJSONObject("id").getString("joke"));
-                            setText(response.toString());
+                            JSONObject obj = response;
+                            String joke = response.getJSONObject("value").getString("joke");
+                            setText(joke);
                         } catch (JSONException e) {
                             Context context = getApplicationContext();
                             CharSequence text = "An error occurred pre!";
@@ -164,7 +165,6 @@ public class RandomJoke extends AppCompatActivity {
             Log.i("Joke Site", "Catch block in API getJoke()");
         }
     }
-
 
     /**
      * This should set the text to whatever is passed to it.
