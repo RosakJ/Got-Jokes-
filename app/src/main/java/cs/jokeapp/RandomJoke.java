@@ -36,8 +36,8 @@ public class RandomJoke extends AppCompatActivity {
      * This configures the home button to take you back to the home page.
      */
     private void configureHomeButton() {
-        Button homerandom = findViewById(R.id.backrandom);
-        homerandom.setOnClickListener(new View.OnClickListener() {
+        Button homeRandom = findViewById(R.id.backrandom);
+        homeRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(RandomJoke.this, MainActivity.class));
