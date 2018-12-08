@@ -20,8 +20,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.json.*;
@@ -70,6 +74,44 @@ public class RandomJoke extends AppCompatActivity {
         });
     }
 
+    /*
+    private void getJoke() {
+        try {
+            URL url = new URL("http://api.icndb.com/jokes/random");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("Get");
+
+            Map<String, String> parameters = new HashMap<>();
+            parameters.put("param1", "val");
+
+            con.setDoOutput(true);
+            DataOutputStream out = new DataOutputStream(con.getOutputStream());
+            out.writeBytes(ParameterStringBuilder.getParamString(parameters));
+            out.flush();
+            out.close();
+
+            //I'm not sure where this is supposed to go but I'm trying it right here:
+            int status = con.getResponseCode();
+            BufferedReader in = new BufferedReader( new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuffer content = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            in.close();
+            setText(content.toString());
+
+        } catch (Exception e) {
+            setText("Uh Oh.");
+        }
+
+
+    }
+
+
+
+
+    /*
     /**
      * This class gets the joke, it sets up the whole object request and volley system
      * I'm not sure this is the best way to do it, I saw some people make separate
@@ -78,6 +120,7 @@ public class RandomJoke extends AppCompatActivity {
      * After it makes the request it calls the setText() method and passes it the joke
      * (I don't know how parsing or the json file works just yet, this is in theory)
      */
+
     private void getJoke() {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         try {
@@ -107,6 +150,7 @@ public class RandomJoke extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(final VolleyError error) {
                         Log.i("Joke Site", "It's coming up with an error..." + error.toString());
+                        setText(error.toString());
                         Context context = getApplicationContext();
                         CharSequence text = "An error occurred in post!";
                         int duration = Toast.LENGTH_SHORT;
