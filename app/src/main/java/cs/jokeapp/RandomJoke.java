@@ -20,7 +20,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Map;
+
 import org.json.*;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
@@ -76,9 +79,10 @@ public class RandomJoke extends AppCompatActivity {
      * (I don't know how parsing or the json file works just yet, this is in theory)
      */
     private void getJoke() {
-        String URL = "https://api.icndb.com";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         try {
+            URL url = new URL("http://api.icndb.com/jokes/random");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
             Request.Method.GET, //Request type
                 "http://api.icndb.com/jokes/random", //URL string
@@ -89,9 +93,10 @@ public class RandomJoke extends AppCompatActivity {
                         Log.i("Joke Site", "It's responding!" + response.toString());
                         try {
                             setText(response.getJSONObject("id").getString("joke"));
+                            setText(response.toString());
                         } catch (JSONException e) {
                             Context context = getApplicationContext();
-                            CharSequence text = "An error occurred!";
+                            CharSequence text = "An error occurred pre!";
                             int duration = Toast.LENGTH_SHORT;
                             Toast toast = Toast.makeText(context, text, duration);
                             toast.show();
@@ -103,7 +108,7 @@ public class RandomJoke extends AppCompatActivity {
                     public void onErrorResponse(final VolleyError error) {
                         Log.i("Joke Site", "It's coming up with an error..." + error.toString());
                         Context context = getApplicationContext();
-                        CharSequence text = "An error occurred!";
+                        CharSequence text = "An error occurred in post!";
                         int duration = Toast.LENGTH_SHORT;
                         Toast toast = Toast.makeText(context, text, duration);
                         toast.show();
@@ -113,7 +118,6 @@ public class RandomJoke extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
             Log.i("Joke Site", "Catch block in API getJoke()");
-            throw e;
         }
     }
 
