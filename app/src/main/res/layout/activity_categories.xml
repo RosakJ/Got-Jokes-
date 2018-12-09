@@ -7,7 +7,7 @@
     tools:context=".CategoriesActivity">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/category_one"
         android:layout_width="218dp"
         android:layout_height="102dp"
         android:layout_alignParentStart="true"
@@ -16,10 +16,10 @@
         android:layout_marginStart="85dp"
         android:layout_marginLeft="85dp"
         android:layout_marginTop="72dp"
-        android:text="Button" />
+        android:text="Category One" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/category_two"
         android:layout_width="218dp"
         android:layout_height="102dp"
         android:layout_alignParentStart="true"
@@ -28,10 +28,10 @@
         android:layout_marginStart="85dp"
         android:layout_marginLeft="85dp"
         android:layout_marginTop="187dp"
-        android:text="Button" />
+        android:text="Category Two" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/category_three"
         android:layout_width="218dp"
         android:layout_height="102dp"
         android:layout_alignParentStart="true"
@@ -40,6 +40,18 @@
         android:layout_marginStart="87dp"
         android:layout_marginLeft="87dp"
         android:layout_marginTop="301dp"
-        android:text="Button" />
+        android:text="Category three" />
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="14dp"
+        android:text="home" />
 
 </RelativeLayout>
