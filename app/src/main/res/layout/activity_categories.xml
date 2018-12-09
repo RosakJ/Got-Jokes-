@@ -54,4 +54,15 @@
         android:layout_marginBottom="14dp"
         android:text="home" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:textSize="20sp"
+        android:shadowColor="@color/colorPrimaryDark"
+        android:text="PLEASE PICK A CATEGORY BELOW" />
+
 </RelativeLayout>
