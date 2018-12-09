@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         configureRandomButton();
+        configureCategoryButton();
     }
 
     /**
@@ -25,6 +26,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, RandomJoke.class));
+            }
+        });
+    }
+
+    /**
+     * Configures the button to go to the categories page.
+     */
+    private void configureCategoryButton() {
+        Button nameButton = (Button) findViewById(R.id.inputjoke);
+        nameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CategoriesActivity.class));
             }
         });
     }
