@@ -17,6 +17,9 @@ public class CategoriesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_categories);
 
         configureHomeButton();
+        configureCategoryOneButton();
+        configureCategoryTwoButton();
+        configureCategoryThreeButton();
     }
 
     /**
@@ -31,5 +34,44 @@ public class CategoriesActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * This configures the category one button to take you back to the home ( ???? ) page.
+     */
+    private void configureCategoryOneButton() {
+        Button categoryOne = findViewById(R.id.category_one);
+        categoryOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CategoriesActivity.this, MainActivity.class)); // change class
+            }
+        });
+    }
+    /**
+     * This configures the category two button to take you back to the home ( ???? ) page.
+     */
+    private void configureCategoryTwoButton() {
+        Button categoryTwo = findViewById(R.id.category_two);
+        categoryTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CategoriesActivity.this, MainActivity.class)); // change class
+            }
+        });
+    }
+
+    /**
+     * This configures the category three button to take you back to the home ( ???? ) page.
+     */
+    private void configureCategoryThreeButton() {
+        Button categoryThree = findViewById(R.id.category_three);
+        categoryThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CategoriesActivity.this, MainActivity.class)); // change class
+            }
+        });
+    }
+
 
 }
