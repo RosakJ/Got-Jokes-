@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">JokeApp</string>
     <string name="title_activity_random_joke">RandomJoke</string>
+    <string name="title_activity_categories">CategoriesActivity</string>
 </resources>
