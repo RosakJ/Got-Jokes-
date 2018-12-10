@@ -23,19 +23,14 @@
         android:layout_marginBottom="156dp"
         android:text="Categories" />
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="294dp"
+        android:layout_height="148dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp"
-        android:autoText="false"
-        android:singleLine="true"
-        android:text="Jokes!"
-        android:textAllCaps="false"
-        android:textSize="100sp"
-        app:fontFamily="cursive" />
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_action_name" />
 
     <TextView
         android:id="@+id/textView"
