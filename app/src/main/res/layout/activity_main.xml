@@ -10,9 +10,13 @@
         android:id="@+id/randomjoke"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/inputjoke"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Random" />
+        android:layout_marginBottom="27dp"
+        android:text="Randomize joke"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
 
     <Button
         android:id="@+id/inputjoke"
@@ -20,8 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="156dp"
-        android:text="Categories" />
+        android:layout_marginBottom="123dp"
+        android:text="find a Category"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
 
     <ImageView
         android:id="@+id/imageView1"
@@ -37,10 +44,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="196dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
         android:fontStyle="italic"
-        android:text="Come joke around with us by clicking a button:"
-        android:textSize="16sp" />
+        android:text="- come joke around with us -"
+        android:textSize="22sp"
+        app:fontFamily="sans-serif-condensed" />
 
 </RelativeLayout>
