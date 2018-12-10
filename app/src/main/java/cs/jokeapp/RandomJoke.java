@@ -54,7 +54,6 @@ public class RandomJoke extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 getJoke();
-                System.out.println("Where even is this?");
             }
         });
     }

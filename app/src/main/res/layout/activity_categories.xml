@@ -16,7 +16,7 @@
         android:layout_marginStart="85dp"
         android:layout_marginLeft="85dp"
         android:layout_marginTop="72dp"
-        android:text="Category One" />
+        android:text="Dad Jokes" />
 
     <Button
         android:id="@+id/category_two"
@@ -28,7 +28,7 @@
         android:layout_marginStart="85dp"
         android:layout_marginLeft="85dp"
         android:layout_marginTop="187dp"
-        android:text="Category Two" />
+        android:text="Chuck Norris" />
 
     <Button
         android:id="@+id/category_three"
@@ -37,9 +37,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="87dp"
-        android:layout_marginLeft="87dp"
-        android:layout_marginTop="301dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="300dp"
         android:text="Category three" />
 
     <Button
