@@ -29,8 +29,8 @@
         android:layout_height="148dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ic_action_name" />
+        android:layout_marginTop="29dp"
+        android:src="@drawable/gotjokes_logo" />
 
     <TextView
         android:id="@+id/textView"
