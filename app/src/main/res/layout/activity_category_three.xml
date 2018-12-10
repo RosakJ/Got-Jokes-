@@ -8,11 +8,14 @@
 
     <Button
         android:id="@+id/homeThree"
-        android:layout_width="250dp"
+        android:layout_width="183dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
         android:text="Home" />
 
     <Button
@@ -21,8 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="170dp"
-        android:text="New Joke" />
+        android:layout_marginBottom="196dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="New Joke"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/jokeTextThree"
@@ -37,11 +43,15 @@
         android:text="Funny Joke" />
 
     <Button
-        android:id="@+id/categoryHomeThree"
+        android:id="@+id/categoryHomeOne"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/homeThree"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="109dp"
-        android:text="Categories" />
+        android:layout_marginStart="-119dp"
+        android:layout_marginBottom="128dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="Categories"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
 </RelativeLayout>
