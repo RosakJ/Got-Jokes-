@@ -224,6 +224,6 @@ public class RandomJoke extends AppCompatActivity {
 
     private void setHeader(String header) {
         TextView head = findViewById(R.id.randomHeader);
-        head.setText("header");
+        head.setText(header);
     }
 }
