@@ -13,10 +13,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="85dp"
-        android:layout_marginLeft="85dp"
-        android:layout_marginTop="72dp"
-        android:text="Dad Jokes" />
+        android:layout_marginStart="79dp"
+        android:layout_marginLeft="79dp"
+        android:layout_marginTop="93dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="DAD JOKES"
+        android:textColor="@android:color/black"
+        android:textSize="23dp" />
 
     <Button
         android:id="@+id/category_two"
@@ -25,10 +28,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="85dp"
-        android:layout_marginLeft="85dp"
-        android:layout_marginTop="187dp"
-        android:text="Chuck Norris" />
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="212dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="CHUCK NORRIS"
+        android:textColor="@android:color/black"
+        android:textSize="23dp" />
 
     <Button
         android:id="@+id/category_three"
@@ -37,10 +43,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="300dp"
-        android:text="Category three" />
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="334dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="CATEGORY THREE"
+        android:textColor="@android:color/black"
+        android:textSize="23dp" />
 
     <Button
         android:id="@+id/home"
@@ -49,10 +58,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="19dp"
-        android:layout_marginRight="19dp"
-        android:layout_marginBottom="14dp"
-        android:text="home" />
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginBottom="59dp"
+        android:text="HOME" />
 
     <TextView
         android:id="@+id/textView2"
@@ -60,9 +69,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:textSize="20sp"
+        android:layout_marginTop="49dp"
         android:shadowColor="@color/colorPrimaryDark"
-        android:text="PLEASE PICK A CATEGORY BELOW" />
+        android:text="PLEASE PICK A CATEGORY BELOW"
+        android:textSize="20sp"
+        app:fontFamily="sans-serif-condensed" />
 
 </RelativeLayout>
