@@ -74,6 +74,7 @@ public class RandomJoke extends AppCompatActivity {
         int choice = (int) (Math.random() * 3 + 1);
         if (choice == 1) {
             //Dad
+            setHeader("Dad Jokes");
             try {
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                         Request.Method.GET,
@@ -118,6 +119,7 @@ public class RandomJoke extends AppCompatActivity {
             }
         } else if (choice == 2) {
             //Chuck Norris
+            setHeader("Chuck Norris");
             try {
                 //Creates a new request for a JSONObject
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
@@ -165,6 +167,7 @@ public class RandomJoke extends AppCompatActivity {
             }
         } else {
             //Cat Facts
+            setHeader("Cat Facts !");
             try {
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                         Request.Method.GET, //Request type
@@ -217,5 +220,10 @@ public class RandomJoke extends AppCompatActivity {
     private void setText(String joke) {
         TextView jokeArea = findViewById(R.id.jokeArea);
         jokeArea.setText(joke);
+    }
+
+    private void setHeader(String header) {
+        TextView head = findViewById(R.id.randomHeader);
+        head.setText("header");
     }
 }

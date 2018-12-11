@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="196dp"
+        android:layout_marginBottom="160dp"
         android:background="@android:color/holo_blue_light"
         android:text="New Joke"
         android:textColor="@android:color/black"
@@ -37,10 +37,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="21dp"
-        android:text="Funny Joke" />
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="73dp"
+        android:text="Fun Fact!"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/categoryHomeThree"
@@ -49,9 +50,20 @@
         android:layout_alignStart="@+id/homeThree"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="-119dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="92dp"
         android:background="@android:color/holo_blue_light"
         android:text="Categories"
         android:textColor="@android:color/black"
         android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/headerThree"
+        android:layout_width="339dp"
+        android:layout_height="39dp"
+        android:layout_alignStart="@+id/jokeTextThree"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:text="Cat Facts!"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 </RelativeLayout>

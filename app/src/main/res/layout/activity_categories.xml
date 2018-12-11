@@ -8,14 +8,14 @@
 
     <Button
         android:id="@+id/category_one"
-        android:layout_width="218dp"
+        android:layout_width="250dp"
         android:layout_height="102dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="79dp"
-        android:layout_marginLeft="79dp"
-        android:layout_marginTop="93dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginLeft="67dp"
+        android:layout_marginTop="126dp"
         android:background="@android:color/holo_blue_light"
         android:text="DAD JOKES"
         android:textColor="@android:color/black"
@@ -23,14 +23,14 @@
 
     <Button
         android:id="@+id/category_two"
-        android:layout_width="218dp"
+        android:layout_width="250dp"
         android:layout_height="102dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="245dp"
         android:background="@android:color/holo_blue_light"
         android:text="CHUCK NORRIS"
         android:textColor="@android:color/black"
@@ -38,16 +38,16 @@
 
     <Button
         android:id="@+id/category_three"
-        android:layout_width="218dp"
+        android:layout_width="250dp"
         android:layout_height="102dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="334dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="367dp"
         android:background="@android:color/holo_blue_light"
-        android:text="CATEGORY THREE"
+        android:text="CAT FACTS !"
         android:textColor="@android:color/black"
         android:textSize="23dp" />
 
@@ -58,21 +58,22 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
-        android:layout_marginBottom="59dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="14dp"
         android:text="HOME" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="61dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="49dp"
         android:shadowColor="@color/colorPrimaryDark"
         android:text="PLEASE PICK A CATEGORY BELOW"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:fontFamily="sans-serif-condensed" />
 
 </RelativeLayout>
