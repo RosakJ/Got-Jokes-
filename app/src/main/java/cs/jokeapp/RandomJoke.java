@@ -208,8 +208,6 @@ public class RandomJoke extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
-
     }
 
     /**
