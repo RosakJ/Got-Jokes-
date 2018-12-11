@@ -89,13 +89,13 @@ public class CategoryThree extends AppCompatActivity {
         try {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                     Request.Method.GET, //Request type
-                    "https://geek-jokes.sameerkumar.website/api",
+                    "https://catfact.ninja/fact",
                     null,
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
                             try {
-                                String joke = response.getString("value");
+                                String joke = response.getString("fact");
                                 setText(joke);
                             } catch (JSONException e) {
                                 Context context = getApplicationContext();

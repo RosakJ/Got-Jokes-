@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -19,6 +20,10 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.*;
 import org.json.JSONObject;
+
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RandomJoke extends AppCompatActivity {
 
@@ -66,51 +71,145 @@ public class RandomJoke extends AppCompatActivity {
      */
     private void getJoke() {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        try {
-            //Creates a new request for a JSONObject
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-            Request.Method.GET, //Request type
-                "http://api.icndb.com/jokes/random", //URL String
-                null, //Put parameters here
-                new Response.Listener<JSONObject>() {
+        int choice = (int) (Math.random() * 3 + 1);
+        if (choice == 1) {
+            //Dad
+            try {
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                        Request.Method.GET,
+                        "https://icanhazdadjoke.com/",
+                        null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    String joke = response.getString("joke");
+                                    setText(joke);
+                                } catch (JSONException e) {
+                                    Context context = getApplicationContext();
+                                    CharSequence text = "An Error Occurred!";
+                                    int duration = Toast.LENGTH_LONG;
+                                    Toast toast = Toast.makeText(context, text, duration);
+                                    toast.show();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(final VolleyError error) {
+                                setText(error.toString());
+                                Context context = getApplicationContext();
+                                CharSequence text = "An error occurred in post!";
+                                int duration = Toast.LENGTH_SHORT;
+                                Toast toast = Toast.makeText(context, text, duration);
+                                toast.show();
+                            }
+                        }) {
                     @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            //If this goes through then the app worked!
-                            //This will parse the JSONObject to extract the joke and set the text.
-                            String joke = response.getJSONObject("value").getString("joke");
-                            setText(joke);
-                        } catch (JSONException e) {
-                            //If an error occurs this will make a toast or a little pop up message
-                            //The pop up message will last for a bit and then go away, it's called
-                            //a toast
-                            //This error message will occur if the parsing fails or another JSON
-                            //Exception occurs
-                            Context context = getApplicationContext();
-                            CharSequence text = "An Error Occurred!";
-                            int duration = Toast.LENGTH_LONG;
-                            Toast toast = Toast.makeText(context, text, duration);
-                            toast.show();
-                        }
+                    public Map<String, String> getHeaders() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<String, String>();
+                        params.put("Accept", "application/json");
+                        return params;
                     }
-                },
-                new Response.ErrorListener() {
+                };
+                requestQueue.add(jsonObjectRequest);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (choice == 2) {
+            //Chuck Norris
+            try {
+                //Creates a new request for a JSONObject
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                        Request.Method.GET, //Request type
+                        "http://api.icndb.com/jokes/random", //URL String
+                        null, //Put parameters here
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    //If this goes through then the app worked!
+                                    //This will parse the JSONObject to extract the joke and set the text.
+                                    String joke = response.getJSONObject("value").getString("joke");
+                                    setText(joke);
+                                } catch (JSONException e) {
+                                    //If an error occurs this will make a toast or a little pop up message
+                                    //The pop up message will last for a bit and then go away, it's called
+                                    //a toast
+                                    //This error message will occur if the parsing fails or another JSON
+                                    //Exception occurs
+                                    Context context = getApplicationContext();
+                                    CharSequence text = "An Error Occurred!";
+                                    int duration = Toast.LENGTH_LONG;
+                                    Toast toast = Toast.makeText(context, text, duration);
+                                    toast.show();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(final VolleyError error) {
+                                //This will come up with a toast if an error in the Volly itself occurs.
+                                setText(error.toString());
+                                Context context = getApplicationContext();
+                                CharSequence text = "An error occurred in post!";
+                                int duration = Toast.LENGTH_SHORT;
+                                Toast toast = Toast.makeText(context, text, duration);
+                                toast.show();
+                            }
+                        });
+                requestQueue.add(jsonObjectRequest);
+            } catch (Exception e) {
+                e.printStackTrace();
+                Log.i("Joke Site", "Catch block in API getJoke()");
+            }
+        } else {
+            //Cat Facts
+            try {
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                        Request.Method.GET, //Request type
+                        "https://catfact.ninja/fact",
+                        null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    String joke = response.getString("fact");
+                                    setText(joke);
+                                } catch (JSONException e) {
+                                    Context context = getApplicationContext();
+                                    CharSequence text = "An Error Occurred!";
+                                    int duration = Toast.LENGTH_LONG;
+                                    Toast toast = Toast.makeText(context, text, duration);
+                                    toast.show();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(final VolleyError error) {
+                                setText(error.toString());
+                                Context context = getApplicationContext();
+                                CharSequence text = "An error occurred in post!";
+                                int duration = Toast.LENGTH_SHORT;
+                                Toast toast = Toast.makeText(context, text, duration);
+                                toast.show();
+                            }
+                        }) {
                     @Override
-                    public void onErrorResponse(final VolleyError error) {
-                        //This will come up with a toast if an error in the Volly itself occurs.
-                        setText(error.toString());
-                        Context context = getApplicationContext();
-                        CharSequence text = "An error occurred in post!";
-                        int duration = Toast.LENGTH_SHORT;
-                        Toast toast = Toast.makeText(context, text, duration);
-                        toast.show();
+                    public Map<String, String> getHeaders() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<String, String>();
+                        params.put("Accept", "application/json");
+                        return params;
                     }
-            });
-            requestQueue.add(jsonObjectRequest);
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.i("Joke Site", "Catch block in API getJoke()");
+                };
+                requestQueue.add(jsonObjectRequest);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+
+
     }
 
     /**
