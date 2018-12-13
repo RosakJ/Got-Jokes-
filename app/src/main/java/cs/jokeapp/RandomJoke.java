@@ -106,6 +106,7 @@ public class RandomJoke extends AppCompatActivity {
                                 toast.show();
                             }
                         }) {
+                    //This is added to send to the website to get a JSON file
                     @Override
                     public Map<String, String> getHeaders() throws AuthFailureError {
                         Map<String, String> params = new HashMap<String, String>();
